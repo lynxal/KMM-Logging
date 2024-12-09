@@ -101,7 +101,7 @@ LoggerInterface Methods
 
 **add(logger: LoggerInterface)** - Adds a new logger implementation to the Logger.  
 
-**(tag: String): LoggerInterface** - Returns a new LoggerInterface instance with the specified tag.  
+**tag(tag: String): LoggerInterface** - Returns a new LoggerInterface instance with the specified tag.  
 
 **Logging Methods** - verbose, debug, info, warn, error, accept a builder function to construct log details.  
 
