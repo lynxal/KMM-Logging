@@ -6,7 +6,7 @@
 
 ## Features
 
-- Multiplatform support: Android and iOS.
+- Multiplatform support: Android, iOS, Desktop and Web.
 - Easy-to-use API with customizable log levels.
 - Tagging support for categorized logging.
 - Builder-based pattern for structured log messages.
@@ -27,7 +27,7 @@ implementation("com.lynxal.logging:logging:{latest_version}")
 
 By default, Logger is not configured, and calls to methods like Logger.debug will not produce any output. To enable logging, you need to provide a LoggerInterface implementation.
 
-For Android and iOS, you can use the built-in DebugLoggerImplementation, which logs messages using the platform’s native logging systems.
+You can use the built-in DebugLoggerImplementation, which logs messages using the platform’s native logging systems.
 
 ### Setting Up the Logger
 
