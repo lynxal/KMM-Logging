@@ -9,6 +9,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import com.lynxal.logging.LogLevel
 import com.lynxal.logging.Logger
 import kmmlogging.exampleapp.generated.resources.Res
 import kmmlogging.exampleapp.generated.resources.label_check_log_messages
@@ -20,6 +21,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App() {
 
     LaunchedEffect(Unit) {
+        Logger.minLevel = LogLevel.Verbose
+
         Logger.verbose("Verbose Message")
         Logger.debug("Debug Message")
         Logger.info("Info Message")

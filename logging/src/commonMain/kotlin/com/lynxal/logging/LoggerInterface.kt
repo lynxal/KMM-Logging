@@ -2,6 +2,11 @@ package com.lynxal.logging
 
 interface LoggerInterface {
     /**
+     * Sets the minimum log level that will be logged.
+     */
+    var minLevel: LogLevel
+
+    /**
      * Retrieves the extras being used by the LoggerInstance. At this point we support only an optional tag property.
      */
     val extras: LoggerExtras
