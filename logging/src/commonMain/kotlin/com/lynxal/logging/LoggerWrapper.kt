@@ -3,8 +3,16 @@ package com.lynxal.logging
 /**
  * A wrapper class around the LoggerInterface, used to provide a logging extras without modifying the initial LoggerInterface instance
  */
-internal class LoggerWrapper(private val logger: LoggerInterface, override val extras: LoggerExtras) :
-    LoggerInterface {
+internal class LoggerWrapper(
+    private val logger: LoggerInterface,
+    override val extras: LoggerExtras
+) : LoggerInterface {
+    override var minLevel: LogLevel
+        get() = logger.minLevel
+        set(value) {
+            logger.minLevel = value
+        }
+
     override fun verbose(loggerExtras: LoggerExtras, details: LogDetails.Builder.() -> Unit) =
         logger.verbose(extras, details)
 

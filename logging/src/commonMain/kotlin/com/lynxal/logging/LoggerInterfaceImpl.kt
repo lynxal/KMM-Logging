@@ -7,7 +7,7 @@ package com.lynxal.logging
  */
 open class LoggerInterfaceImpl : LoggerInterface {
     private val loggerImplementations: MutableSet<LoggerImplementation> = mutableSetOf()
-    var minLevel: LogLevel = LogLevel.Debug
+    override var minLevel: LogLevel = LogLevel.Debug
 
     override val extras: LoggerExtras = LoggerExtras()
     override fun verbose(loggerExtras: LoggerExtras, details: LogDetails.Builder.() -> Unit) =
