@@ -83,7 +83,7 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
 
-    coordinates("com.lynxal.logging", "logging", "0.0.4")
+    coordinates("com.lynxal.logging", "logging", "0.0.5")
     pom {
         name.set("KMM Logging")
         description.set("A lightweight and flexible logging library for Kotlin Multiplatform Mobile (KMM) projects. It provides platform-specific logging implementations for Android and iOS, with an easy-to-use API and customizable log levels. Designed to integrate seamlessly into KMM applications.")
