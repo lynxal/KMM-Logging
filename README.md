@@ -103,6 +103,8 @@ LoggerInterface Methods
 
 **tag(tag: String): LoggerInterface** - Returns a new LoggerInterface instance with the specified tag.  
 
+**minLevel** - adjusts the minimal logging level, the default value is **LogLevel.Debug**
+
 **Logging Methods** - verbose, debug, info, warn, error, accept a builder function to construct log details.  
 
 # Contributions
