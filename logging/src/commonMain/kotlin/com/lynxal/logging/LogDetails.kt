@@ -1,7 +1,8 @@
 package com.lynxal.logging
 
-import kotlinx.datetime.Clock
-import kotlinx.datetime.Instant
+import kotlin.time.Clock
+import kotlin.time.Instant
+
 
 data class LogDetails(
     val logLevel: LogLevel,
@@ -10,7 +11,7 @@ data class LogDetails(
     val payload: Map<String, String> = emptyMap(),
     val timestamp: Instant = Clock.System.now()
 ) {
-    data class Builder internal constructor(
+    data class Builder(
         var message: String = "",
         var cause: Throwable? = null,
         var payload: Map<String, String> = emptyMap()
