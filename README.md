@@ -11,6 +11,19 @@
 - Tagging support for categorized logging.
 - Builder-based pattern for structured log messages.
 
+## Supported targets
+
+| Platform | Targets |
+|---|---|
+| Android | `android` |
+| iOS | `iosArm64`, `iosSimulatorArm64` |
+| Desktop | `jvm` |
+| Web | `wasmJs` |
+
+> **Note:** `iosX64` (Intel simulator) is no longer supported as of version 0.0.7.
+> Compose Multiplatform and the JetBrains androidx artifacts stopped publishing it,
+> and all current Macs run Apple Silicon. Intel-simulator consumers should stay on 0.0.6.
+
 ---
 
 ## Installation
