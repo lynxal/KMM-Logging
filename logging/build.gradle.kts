@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidKmpLibrary)
 
-    id("com.vanniktech.maven.publish") version "0.33.0"
+    id("com.vanniktech.maven.publish") version "0.37.0"
     id("signing")
 }
 
