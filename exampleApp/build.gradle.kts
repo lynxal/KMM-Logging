@@ -19,8 +19,9 @@ kotlin {
         }
     }
     
+    // No iosX64: Compose Multiplatform 1.12.0 and the JetBrains lifecycle artifacts no longer
+    // publish an ios_x64 variant. The :logging library itself still targets it.
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach { iosTarget ->
