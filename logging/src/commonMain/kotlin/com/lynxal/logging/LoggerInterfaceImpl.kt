@@ -48,10 +48,12 @@ open class LoggerInterfaceImpl : LoggerInterface {
     }
 
     override fun add(loggerImplementation: LoggerImplementation) {
-        while (true) {
+        // Retry only when another thread swapped the set between the load and the compare-and-set.
+        // Same contract as the stdlib's AtomicReference.update, which needs a newer Kotlin.
+        do {
             val current = loggerImplementations.load()
-            if (loggerImplementations.compareAndSet(current, current + loggerImplementation)) return
-        }
+            val updated = current + loggerImplementation
+        } while (!loggerImplementations.compareAndSet(current, updated))
     }
 
     private fun log(logDetails: LogDetails, loggerExtras: LoggerExtras) {
