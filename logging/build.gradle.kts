@@ -3,16 +3,28 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.androidKmpLibrary)
 
     id("com.vanniktech.maven.publish") version "0.33.0"
     id("signing")
 }
 
 kotlin {
-    androidTarget()
+    jvmToolchain((findProperty("jvm.version") as String).toInt())
+
+    android {
+        namespace = "com.lynxal.logging"
+        compileSdk {
+            version = release(libs.versions.android.compileSdk.get().toInt())
+        }
+        minSdk = libs.versions.android.minSdk.get().toInt()
+
+        // Registers the host-test compilation. com.android.library created the unit-test
+        // variant automatically; this plugin does not, so without this the module's tests
+        // silently stop running rather than failing.
+        withHostTestBuilder { }.configure { }
+    }
     listOf(
-        iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach {
@@ -58,23 +70,6 @@ kotlin {
 
     compilerOptions {
         freeCompilerArgs.add("-opt-in=kotlin.time.ExperimentalTime")
-    }
-}
-
-android {
-    namespace = "com.lynxal.logging"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
-    defaultConfig {
-        minSdk = libs.versions.android.minSdk.get().toInt()
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlin {
-        jvmToolchain((findProperty("jvm.version") as String).toInt())
     }
 }
 

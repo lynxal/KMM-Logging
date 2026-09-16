@@ -1,14 +1,14 @@
 [versions]
-agp = "8.11.0"
-kotlin = "2.2.0"
-kotlinDateTime = "0.7.1"
-compose-multiplatform = "1.8.2"
-androidx-lifecycle = "2.9.1"
-androidx-activityCompose = "1.10.1"
-kotlinx-coroutines = "1.10.2"
-android-compileSdk = "36"
+agp = "9.4.0"
+kotlin = "2.4.20"
+kotlinDateTime = "0.8.0"
+compose-multiplatform = "1.12.0"
+androidx-lifecycle = "2.11.0"
+androidx-activityCompose = "1.13.0"
+kotlinx-coroutines = "1.11.0"
+android-compileSdk = "37"
 android-minSdk = "24"
-android-targetSdk = "36"
+android-targetSdk = "37"
 
 [libraries]
 kotlin-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinDateTime" }
@@ -19,6 +19,7 @@ kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-co
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+androidKmpLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
